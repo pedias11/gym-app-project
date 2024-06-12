@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href \"/gym-app-project/\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=https://pedias11.github.io/gym-app-project/"
+    "deploy": "npm run build && npx angular-cli-ghpages --dir=dist/gym-app-project/browser --repo=https://github.com/pedias11/gym-app-project.git"
   },
   "private": true,
   "dependencies": {
