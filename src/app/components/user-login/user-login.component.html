@@ -1,0 +1,23 @@
+<div class="d-flex flex-column align-items-center bg-dark text-light p-5" style="background-image: url('https://i.postimg.cc/G3ZfbM35/pexels-leonardho-1552252.jpg'); height: 100vh;">
+    <h4>User Login</h4>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-3 w-50" style="max-width: 500px">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" class="form-control" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Login</button>
+        @if (invalidLogin) {
+            <div class="alert alert-danger">
+                <strong>Error:</strong>
+                Invalid email or password. Click <a role="button" routerLink="/user-registration">here</a> to register
+            </div>
+        }
+    </form>
+</div>
+
+

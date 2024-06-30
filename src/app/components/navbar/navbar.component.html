@@ -1,0 +1,30 @@
+<nav class="navbar navbar-custom-black text-light justify-content-between">
+    <a role="button" class="navbar-brand ms-3 display-5 text-light" RouterLink="home-page"
+      >711 Fitness Club
+    </a>
+
+    <div class="nav navbar-brand justify-content-end display-5">
+        <div class="nav-item">
+          <a class="nav-link text-light" role="button" routerLink="home-page">Home</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link text-light" role="button" routerLink="user-dashboard">Dashboard</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link text-light" role="button" routerLink="user-registration">Register</a>
+        </div>
+        <div class="nav-item">
+          @if (user()) {
+            <a class="nav-link text-light me-3 d-flex gap-2 align-items-center">
+              Welcome, {{ user().fullname }}
+              <mat-icon matTooltip="Logout" role="button" (click)="logout()">logout</mat-icon>
+            </a>
+          } @else {
+            <a class="nav-link text-light me-3 d-flex gap-2 align-items-center">
+                Login
+                <mat-icon role="button" class="icon-link-hover" routerLink="user-login">login</mat-icon>
+            </a>
+          }
+        </div>
+    </div>
+</nav>
